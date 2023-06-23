@@ -1,5 +1,5 @@
 <div class="container mt-5" style="width: 700px;">
-  <h2 class="mb-3">Log in</h2>
+  <h2 class="mb-3"><%= t('.sign_in') %></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field mb-3">
@@ -20,7 +20,7 @@
     <% end %>
 
     <div class="actions mb-3">
-      <%= f.submit "Log in", class: "btn btn-success rounded-1" %>
+      <%= f.submit t('.sign_in'), class: "btn btn-success rounded-1" %>
     </div>
   <% end %>
 

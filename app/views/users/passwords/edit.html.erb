@@ -1,25 +1,25 @@
 <div class="container mt-5" style="width: 700px;">
-  <h2 class="mb-3">Change your password</h2>
+  <h2 class="mb-3"><%= t('.change_your_password') %></h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
     <%= f.hidden_field :reset_password_token %>
 
     <div class="field mb-3">
-      <%= f.label :password, class: "form-label", "New password" %>
+      <%= f.label :password, t('.new_password'), class: "form-label" %>
       <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
       <% end %>
       <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "new-password" %>
     </div>
 
     <div class="field mb-3">
-      <%= f.label :password_confirmation, class: "form-label", "Confirm new password" %>
+      <%= f.label :password_confirmation, t('.confirm_new_password'), class: "form-label" %>
       <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
     </div>
 
     <div class="actions mb-3">
-      <%= f.submit "Change my password", class: "btn btn-primary rounded-1" %>
+      <%= f.submit t('.change_my_password'), class: "btn btn-primary rounded-1" %>
     </div>
   <% end %>
 
